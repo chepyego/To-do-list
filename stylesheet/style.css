@@ -1,0 +1,91 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.title{
+    text-align: center;
+    margin-top: 24px;
+    margin-bottom: 20px;
+}
+
+.input-field{
+    width: 200px;
+    height: 24px;
+    
+}
+.input-button{
+ height: 24px;
+ margin: 4px;
+}
+.input-container{
+    display: flex;
+    justify-content: center;
+}
+.content-body{
+    display: flex;
+    justify-content: center;
+}
+.para-style{
+    font-size: large;
+}
+
+#box-1{
+    margin: 2px;
+    width: 200px;
+    height: 200px;
+    background-color: aqua;
+    
+}
+
+#box-2{
+    margin: 2px;
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+}
+#box-3{
+    display: hidden;
+
+    margin: 2px;
+    width: 200px;
+    height: 200px;
+    background-color: brown;
+}
+.boxes{
+    display: hidden;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+/* edit and delete buttons */
+.modify-buttons {
+    padding: 4px 8px 4px 8px
+}
+.edit-button-actions{
+    background-color: blue;
+    padding: 4px 8px;
+    border-radius: 2px;
+}
+.delete-button-actions {
+    background-color: red;
+    padding: 4px 8px;
+    border-radius: 2px;
+
+
+}
+
+.content-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.todo-content-items + .todo-content-items{
+    margin-top: 20px
+
+
+}
+.todo__content-items > div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
