@@ -1,91 +1,81 @@
-*{
+* {
     padding: 0;
     margin: 0;
-}
-.title{
-    text-align: center;
-    margin-top: 24px;
-    margin-bottom: 20px;
-}
-
-.input-field{
-    width: 200px;
-    height: 24px;
-    
-}
-.input-button{
- height: 24px;
- margin: 4px;
-}
-.input-container{
-    display: flex;
-    justify-content: center;
-}
-.content-body{
-    display: flex;
-    justify-content: center;
-}
-.para-style{
-    font-size: large;
-}
-
-#box-1{
-    margin: 2px;
-    width: 200px;
-    height: 200px;
-    background-color: aqua;
-    
-}
-
-#box-2{
-    margin: 2px;
-    width: 200px;
-    height: 200px;
-    background-color: blue;
-}
-#box-3{
-    display: hidden;
-
-    margin: 2px;
-    width: 200px;
-    height: 200px;
-    background-color: brown;
-}
-.boxes{
-    display: hidden;
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-}
-/* edit and delete buttons */
-.modify-buttons {
-    padding: 4px 8px 4px 8px
-}
-.edit-button-actions{
-    background-color: blue;
-    padding: 4px 8px;
-    border-radius: 2px;
-}
-.delete-button-actions {
-    background-color: red;
-    padding: 4px 8px;
-    border-radius: 2px;
-
+    background-color: #F5F5F5;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
 }
 
-.content-body{
+.heading {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 6px;
+
+
+}
+.content {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    margin-top: 40px;
+    /* background-color: #FFFFFF; */
 }
-.todo-content-items + .todo-content-items{
-    margin-top: 20px
+
+.input-field {
+    width: 300px;
+    height: 40px;
+    /* border-radius: 20px; */
+    margin: 20px;
+}
+.check-box{
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+
+}
+.edit-button {
+    background-color: blue;
+}
+.delete-button {
+    background-color: red;
+}
+.b-buttons{
+    border-radius: 4px;
+    padding: 2px;
+    margin: 4px;
+
+}
+.add-button {
+    height: 40px;
+    padding: 2px;
+
+}
+
+.list-item {
+    background-color: #FFFFFF;
+    width: Hug (274px);
+    height: Hug(248px);
+    border-radius: 8px;
+    padding: 24px;
+}
+.list-items {
+    list-style-type: none;
+    /* font-family: 'Rubik'; */
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #161717;
+    /* order: 1; */
 
 
 }
-.todo__content-items > div {
+.todo-items-child {
     display: flex;
-    align-items: center;
-    width: 100%;
+}
+
+.todo-items-child + .todo-items-child {
+    margin-top: 20px;
 }
