@@ -1,11 +1,58 @@
+// alert("jemimah");
+function deleteToDo(eventObject){
+  alert('are you sure you want to delete?');
+  const clickedButton = eventObject.target;
+
+  const liDeleted = clickedButton.parentNode.parentNode;
+  liDeleted.remove();
+  
+
+  console.log(eventObject);
+
+
+}
+
+function addEventListenerToDeleteButton(){
+  // querySelectorAll return an array of [NodeList]
+  const collectionButton = document.querySelectorAll(".d_butt");
+
+  // #select the last button
+  const lastButton = collectionButton[collectionButton.length -1];
+
+  lastButton.addEventListener("click", deleteToDo);
+
+
+}
+
+
+
+
+
+
+
+
 
 function showInputValue(todo){
     let li = document.createElement('li');
-    let liItems = document.getElementById('list-items')
-    li.innerHTML = `<input type="checkbox" class="check-box"></input>
-                     <span class="list-items">${todo}</span>
-                    <button class="edit-button b-buttons">edit</button>
-                     <button class="delete-button b-buttons">delete</button>`
+    let liItems = document.getElementById('list-items');
+    li.innerHTML =  `
+  
+      <input type="checkbox" class="check-box"/>
+      <span class="list-items">${todo}</span>
+
+      <div class="todo_actions">
+        <button class="edit-button b-buttons edit_b">
+          edit
+        </button>
+
+        <button  type="button" class="delete-button b-buttons d_butt">
+        delete
+        </button>
+
+      
+      </div>`;
+  
+
 
     li.classList.add('todo-items-child')                 
    liItems.appendChild(li);
@@ -20,7 +67,7 @@ function TodoInput(e){
     let inputButton = document.getElementById('input');
     let inputValue = inputButton.value;
      
-    inputButton = " "
+    inputButton.value = " "
     showInputValue(inputValue);
 
 }
@@ -32,15 +79,23 @@ submitForm.addEventListener('click', TodoInput);
 
 // delete and edit functions
 
-function deleteElements(){
-  let deleteList = document.getElementsByClassName('list-items');
-  let removedElement = (deleteList.length -1).pop;
-
-  console.log(removedElement);
-
+function editTodo(){
+   let editInput = editButton.value;
+   
+   let addButton = document.querySelector(".add_butt")
+   addButton.innerText = "edit";
 
 }
 
-let deleteButton = document.getElementById('delete-button');
+function addEventListenerToEditButton(){
 
-deleteButton.addEventListener('click', deleteElements);
+  const editButton = document.querySelector(".edit_b");
+
+  editButton.addEventListener("click", editTodo);
+
+}
+
+
+
+
+
