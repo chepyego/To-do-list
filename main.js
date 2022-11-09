@@ -1,23 +1,23 @@
 // alert("jemimah");
-function deleteToDo(eventObject){
+function deleteToDo(eventObject) {
   alert('are you sure you want to delete?');
   const clickedButton = eventObject.target;
 
   const liDeleted = clickedButton.parentNode.parentNode;
   liDeleted.remove();
-  
 
-  console.log(eventObject);
+
+  // console.log(eventObject);
 
 
 }
 
-function addEventListenerToDeleteButton(){
+function addEventListenerToDeleteButton() {
   // querySelectorAll return an array of [NodeList]
   const collectionButton = document.querySelectorAll(".d_butt");
 
   // #select the last button
-  const lastButton = collectionButton[collectionButton.length -1];
+  const lastButton = collectionButton[collectionButton.length - 1];
 
   lastButton.addEventListener("click", deleteToDo);
 
@@ -32,10 +32,10 @@ function addEventListenerToDeleteButton(){
 
 
 
-function showInputValue(todo){
-    let li = document.createElement('li');
-    let liItems = document.getElementById('list-items');
-    li.innerHTML =  `
+function showInputValue(todo) {
+  let li = document.createElement('li');
+  let liItems = document.getElementById('list-items');
+  li.innerHTML = `
   
       <input type="checkbox" class="check-box"/>
       <span class="list-items">${todo}</span>
@@ -51,24 +51,26 @@ function showInputValue(todo){
 
       
       </div>`;
-  
 
 
-    li.classList.add('todo-items-child')                 
-   liItems.appendChild(li);
-   
+
+  li.classList.add('todo-items-child')
+  liItems.appendChild(li);
+  addEventListenerToDeleteButton();
+  addEventListenerToEditButton();
+
 
 }
 
-function TodoInput(e){
+function TodoInput(e) {
 
-    e.preventDefault();
+  e.preventDefault();
 
-    let inputButton = document.getElementById('input');
-    let inputValue = inputButton.value;
-     
-    inputButton.value = " "
-    showInputValue(inputValue);
+  let inputButton = document.getElementById('input');
+  let inputValue = inputButton.value;
+
+  inputButton.value = " "
+  showInputValue(inputValue);
 
 }
 
@@ -79,15 +81,21 @@ submitForm.addEventListener('click', TodoInput);
 
 // delete and edit functions
 
-function editTodo(){
-   let editInput = editButton.value;
-   
-   let addButton = document.querySelector(".add_butt")
-   addButton.innerText = "edit";
+function editTodo(e) {
+  e.preventDefault();
+  const editButton = document.querySelector(".edit_b");
+  const addButton = document.querySelector(".add_butt");
+  
+  addButton.innerHTML = "edit";
+
+  let inputButton = document.getElementById('input');
+  let inputValue = inputButton.value;
+
+  inputButton.value = " ";
 
 }
 
-function addEventListenerToEditButton(){
+function addEventListenerToEditButton() {
 
   const editButton = document.querySelector(".edit_b");
 
